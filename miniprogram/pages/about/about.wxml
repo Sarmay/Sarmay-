@@ -1,0 +1,39 @@
+<van-nav-bar custom-class="mynatives" title="سارماي تەحىنيكاسى" left-text="ارتقا قايتۋ" left-arrow bind:click-left="onClickLeft" fixed>
+</van-nav-bar>
+<van-nav-bar z-index="-1">
+</van-nav-bar>
+
+<view class="about">
+<view class="logo">
+    <image class='head-sculpture' src='../../images/sarmay_logos.png'></image>
+</view>
+<text>سالەمەتسىزبە !</text>
+<text class="do">سارماي تەحىنيكاسى 2016 جىلدان بەرى قاراي حالىق ءۇشىن تىنباي قىزىمەت وتەۋدە،بۇگىنگە دەيىن سارماي تەحىنيكاسى باس بولىپ زەرتتەپ تومەندەگىدەي تابىستارعا قول جەتكىزدى:</text>
+<text class="import">1. تەلەفونعا قازاقشا تانىتۋ،ءارى ءارىپ ۇلگىسىن كوركەمدەۋ دەتالىن جاساپ شىقتى</text>
+<text class="import">2.قازاقشا حات كىرگىزۋ دەتالىن جاسادى</text>
+<text class="import">3.سارماي تەحىنيكا تانىستىرۋ ءۇنحات تەكشەسىن قۇردى</text>
+<text class="import">4.بالاعا ات قويۋ توربەتى سەستاماسىن جاسادى</text>
+<text class="import">5.فوتوشوپقا قازاقشا حات كىرگىزۋ توربەتى دەتالىن جاسادى</text>
+<text class="import">6.قازاقشا ءارىپ سايكەستىرۋ توربەتى دەتالىن جاسادى</text>
+<text class="import">7.قازاقشا ميميكا جاساۋ توربەتى سەستاماسىن جاسادى</text>
+<text class="import">8.بالاعا ات قويۋ ميكىرو ءۇنحات سەستاماسىن جاسادى</text>
+<text class="do">سارماي تەحىنيكاسى زەرتتەۋمەن اينالىسۋمەن بىرگە حالىقتىڭ قاجەتىن قاناعاتاندىرىپ ، قازاق تور تەحىنيكاسىنىڭ كەتىگىن تولىقتاۋعا قۇلشىنعان ۇجىم</text>
+<text class="job">تومەندە ۇجىمىمىزدىڭ ستەي الاتىن جۇمىستارى:</text>
+<text class="import">ءار تۇردەگى ءۇنحات تەكشەلەرىن قۇرۋ</text>
+<text class="import">ءۇنحات تەكشەلەرىنە تۇرلى يقۋاتتاردى،ويىنداردى،ادام تارتۋ سەستاسىن جاسايدى</text>
+<text class="import">ۇلكەن-كىشى،كۇردەلى-قاراپايىم توربەتىن جاسايدى</text>
+<text class="import">ءتۇرلى ميكىرو ءۇنحات دەتالىن جاسايدى</text>
+<text class="import">راسىم جوبالايدى،جارناما جاسايدى</text>
+<text class="import">ەگەر قاجەتىڭىز تۇسسە تۇمەندەگى تەتىكتى باسىپ جاۋاپتى ادامعا حابارلاسىڭىز</text>
+     <button class='newmybutton' open-type="contact" bindcontact="handleContact" style="border: 2rpx #194158 solid;margin:20rpx;">باسقارۋشىعا حابارلاسۋ</button>
+<text class="job">سارماي تەحىنيكاسىنىڭ ەكى ۇلكەن ءۇنحات تەكشەسى،جاڭا تەلەفون كومپيوتەر بىلىمدەرىمەن،قولايلى دا قىزىقتى دەتالداردى ۇيناماقشى بولساڭىز،ەكىلىكتى جايمالاپ ەكى تەكشەگە دە قوسىلىپ الۋدى ۇمىتپاڭىز</text>
+<official-account></official-account>
+<view class="qr">
+<image src="{{frist}}" mode="widthFix"  
+    data-src="{{frist}}"
+    bindtap="previewImage"></image>
+<image src="{{second}}" mode="widthFix"  
+    data-src="{{frist}}"
+    bindtap="previewImage"></image>
+</view>
+</view>

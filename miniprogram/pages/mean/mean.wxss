@@ -1,0 +1,65 @@
+.mymean {
+  direction: rtl;
+  font-family: kaz;
+}
+
+.natbar {
+  font-family: kaz;
+}
+
+.mytip {
+direction: rtl;
+font-family: kaz;
+line-height: 100rpx;
+}
+
+.inputclass {
+  font-family: kaz;
+}
+
+.showcomment {
+  direction: rtl;
+  font-family: kaz;
+}
+
+.actionss  .wux-card__actions {
+  font-family: kaz;
+}
+
+.mytoast {
+  font-family: kaz;
+  direction: rtl;
+}
+
+.myshow {
+  padding: 50rpx 10rpx;
+}
+
+.myshow view {
+  padding-bottom: 20rpx;
+}
+.colected {
+  margin: 0px 15px 20px 0px;
+  font-family: kaz;
+  direction: rtl;
+}
+
+.colectedbutton {
+  padding: 0rpx 50rpx;
+}
+
+.myshow text {
+  color: red;
+  padding-left: 100rpx;
+  width: 100rpx;
+  display: inline-block;
+}
+
+.myhr {
+  height: 50rpx;
+}
+
+.mybutton {
+  margin: 50rpx;
+  font-family: kaz;
+}

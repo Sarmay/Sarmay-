@@ -1,0 +1,66 @@
+<van-nav-bar title-class="natbar" custom-class="natbar" title="ەسىمىنڭ تولىعى" left-text="ارتقا قايتۋ" left-arrow  bind:click-left="onClickLeft" fixed>
+</van-nav-bar>
+<van-nav-bar z-index="-1">
+</van-nav-bar>
+<wux-notification class="mytip" id="wux-notification" />
+<van-panel class="mymean">
+  <view class="myshow"> 
+        <view><text>اتى: </text>{{name}}</view>
+
+        <view wx:if="{{sex == 'Male'}}"><text>جىنىسى: </text>ەر بالانىڭ ەسىمى</view>
+        <view wx:else><text>جىنىسى: </text>ايەل بالانىڭ ەسىمى</view>
+
+        <view><text>ماعىناسى: </text>{{mean}}</view>
+  </view>
+</van-panel>
+
+<view class="myhr"></view>
+
+<view class="colected">
+<title>ساقتاۋ</title>
+<van-icon wx:if="{{!iscolected}}" name="star-o" color="red" size="50rpx" custom-class="colectedbutton" bind:click="colected"/>
+<van-icon wx:if="{{iscolected}}" name="star" color="red" size="50rpx" custom-class="colectedbutton" bind:click="colected"/>
+</view>
+
+<van-toast id="van-toast" class="mytoast"/>
+<van-dialog id="van-dialog" class="mytoast"/>
+
+<van-panel class="mymean" title="باعا بەرۋ">
+<van-cell-group>
+  <van-field
+    focus="{{ myfocou }}"
+    value="{{ evaluate }}"
+    label="باعا بەرىڭىز:"
+    type="textarea"
+    placeholder="بۇل ەسىمگە قالاي قارايسىز"
+    autosize="true"
+    required="true"
+    custom-style="mystyle"
+    input-class="inputclass"
+    input-align="right"
+    bind:change="onEvaluateChange"
+  />
+</van-cell-group>
+
+</van-panel>
+
+  <van-button class="mybutton" size="large" bindtap="submit" type="danger">كوزقاراس ءبىلدىرۋ</van-button>
+              <view class="adContainer">
+            <ad unit-id="adunit-c2ef81cb1195cb62"></ad>
+        </view>
+<view class="myhr"></view>
+  <van-cell title="باسقالاردىڭ كوزقاراستارى" custom-class="mymean" icon="comment-o" is-link arrow-direction="down"/>
+  <view class="myhr"></view>
+  <view wx:for="{{comment}}" wx:key="{{index}}">
+        <wux-card wx:if="{{item.open_id == open_id}}" wux-class="actionss" full title="{{item.username}}" actions="{{ actions }}" data-gid='{{item._id}}' bind:action="onAction"  thumb="{{item.userimg}}" thumb-style="border-radius: 50%;">
+            <view slot="body" class="showcomment">{{item.content}}</view>
+            <view slot="footer">{{item.creatTime}}</view>
+        </wux-card>
+                <wux-card wx:else full title="{{item.username}}" thumb="{{item.userimg}}" thumb-style="border-radius: 50%;">
+            <view slot="body" class="showcomment">{{item.content}}</view>
+            <view slot="footer">{{item.creatTime}}</view>
+        </wux-card>
+          <view class="myhr"></view>
+  </view>
+  <view class="myhr"></view>
+  <view class="myhr"></view>

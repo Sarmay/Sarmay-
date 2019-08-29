@@ -1,0 +1,11 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "van-toast": "vant-weapp/toast",
+    "van-dialog": "vant-weapp/dialog",
+    "van-panel": "vant-weapp/panel",
+    "van-button": "vant-weapp/button",
+      "van-icon": "vant-weapp/icon",
+      "van-nav-bar": "vant-weapp/nav-bar"
+  }
+}

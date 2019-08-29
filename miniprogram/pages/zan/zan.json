@@ -1,0 +1,14 @@
+{
+        "navigationStyle": "custom",
+  "usingComponents": {
+    "van-button": "vant-weapp/button",
+    "van-row": "vant-weapp/row",
+    "van-col": "vant-weapp/col",
+    "van-cell": "vant-weapp/cell",
+    "van-cell-group": "vant-weapp/cell-group",
+        "van-toast": "vant-weapp/toast",
+        "van-dialog": "vant-weapp/dialog",
+        "van-notify": "vant-weapp/notify",
+        "van-nav-bar": "vant-weapp/nav-bar"
+  }
+}

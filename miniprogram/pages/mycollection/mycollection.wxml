@@ -1,0 +1,23 @@
+<van-nav-bar title-class="natbar" custom-class="natbar" title="مەنىڭ ساقتاعاندارىم" left-text="ارتقا قايتۋ" left-arrow  bind:click-left="onClickLeft" fixed>
+</van-nav-bar>
+<van-nav-bar z-index="-1">
+</van-nav-bar>
+<van-toast id="van-toast" class="mytoast"/>
+<van-dialog id="van-dialog" class="mytoast"/>
+              <view class="adContainer">
+            <ad unit-id="adunit-9e0b0f65526be862"></ad>
+        </view>
+<van-collapse custom-class="mycoll"  wx:if="{{mycollection.length>0}}" value="{{ activeName }}" bind:change="onCollectionChange" accordion>
+  <van-collapse-item class="yourname" name="{{index}}" wx:for="{{mycollection}}" wx:key="item">
+    <view slot="title">{{item.name}}</view>
+    <view slot="value">{{item.sex}}</view>
+       <view class="mean">{{item.mean}}</view>
+       <view class="meantime">{{item.creatTime}}</view>
+      <van-button class="lookbutton" bindtap="deleteCollection" data-nameid="{{item._id}}" icon="delete" size="small" type="danger">ءوشىرۋ</van-button>
+  </van-collapse-item>
+</van-collapse>
+
+
+<view wx:else>
+    <view class="loading">ساقتاعان ەسىمىڭىز جوق ەكەن</view>
+</view>

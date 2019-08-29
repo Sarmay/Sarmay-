@@ -1,0 +1,21 @@
+<van-nav-bar title-class="natbar" custom-class="natbar" title="مەنىڭ لەبىزدەرىم" left-text="ارتقا قايتۋ" left-arrow  bind:click-left="onClickLeft" fixed>
+</van-nav-bar>
+<van-nav-bar z-index="-1">
+</van-nav-bar>
+<van-toast id="van-toast" class="mytoast" />
+<van-dialog id="van-dialog" class="mytoast" />
+              <view class="adContainer">
+            <ad unit-id="adunit-72ca14b5b20d984c"></ad>
+        </view>
+<view wx:if="{{mymessage.length>0}}">
+  <view wx:for="{{mymessage}}" wx:key="{{index}}">
+    <van-panel footer-class="message" title="{{item.username}}" desc="{{item.creatTime}}" use-footer-slot>
+      <view class="messagecon">{{item.content}}</view>
+      <view slot="footer">
+        <van-button size="small" type="danger" icon="delete" data-nameid="{{item._id}}" bind:click="messdel">ءوشىرۋ</van-button>
+      </view>
+    </van-panel>
+    <view style="padding:20rpx;"></view>
+  </view>
+</view>
+<view wx:else class="loading">ەشقانداي كوزقاراس بىلدىرمەپسىز</view>

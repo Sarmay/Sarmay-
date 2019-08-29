@@ -1,0 +1,97 @@
+<van-nav-bar custom-class="mynatives" title="مەنىڭ يقۋاتتارىم" fixed>
+</van-nav-bar>
+<van-nav-bar z-index="-1">
+</van-nav-bar>
+<!-- 顶部信息 -->
+<view class='member-content'>
+  <view class='content-header'>
+    <view class='header-top'>
+      <!-- 头像昵称 -->
+      <view class='top-mid'>
+        <block wx:if="{{hasLogin}}">
+          <image mode='aspectFill' class='head-sculpture' src='{{avatar}}'></image>
+          <text class='username'>{{nickname}}</text>
+        </block>
+        <block wx:else>
+          <view class="head-sculpture">
+            <open-data type="userAvatarUrl"></open-data>
+          </view>
+          <view>
+            <view class="login-btn">
+              <navigator url="../login/login" hover-class="navigator-hover">تىركەلۋ</navigator>
+            </view>
+          </view>
+        </block>
+      </view>
+
+    </view>
+    <image class='bg' src='../../images/bg.png'></image>
+    <view class='header-bottom'></view>
+  </view>
+</view>
+<!-- 功能模块第二部分 -->
+<view class='content-two content-body'>
+  <!-- 关于我们 -->
+  <view class='content-view' bindtap='zanshang'>
+    <image class='member-icon' src='../../images/zan.png'></image>
+    <text class='member-text'>سارماي تەحىنيكاسىن قولداۋ</text>
+  </view>
+</view>
+<view class='content-two content-body'>
+  <!-- 我的关注 -->
+  <view class='content-view' hover-class="bg_red" bindtap='attention'>
+    <image class='member-icon' src='../../images/like.png'></image>
+    <text class='member-text'>مەنىڭ ساقتاعاندارىم</text>
+  </view>
+  <!-- 我的足迹 -->
+  <view class='content-view' bindtap='browsingHistory'>
+    <image class='member-icon' src='../../images/messege.png'></image>
+    <text class='member-text'>مەنىڭ كوزقاراستارىم</text>
+  </view>
+</view>
+<view class='content-two content-body'>
+  <!-- 邀请好友 -->
+  <view class='content-view'>
+    <image class='member-icon' src='../../images/kefu.png'></image>
+     <button class='newmybutton' open-type="contact" bindcontact="handleContact" style="text-align: right;">باسقارۋشىعا حابارلاسۋ</button>
+  </view>
+</view>
+<view class='content-two content-body'>
+  <!-- 邀请好友 -->
+  <view class='content-view'>
+    <image class='member-icon' src='../../images/share.png'></image>
+     <button class='newmybutton' open-type="share" style="text-align: right;">دوستارىما جولدايمىن</button>
+  </view>
+</view>
+<view class='content-two content-body'>
+  <!-- 赞赏 -->
+  <view class='content-view' bindtap='about'>
+    <image class='member-icon' src='../../images/guanyu.png'></image>
+    <text class='member-text'>بىزگە قاتىستى</text>
+  </view>
+</view>
+<view class='content-two content-body'>
+  <!-- 管理员 -->
+  <view wx:if="{{isAdmin}}" class='content-view' bindtap='admins'>
+    <image class='member-icon' src='../../images/admin.png'></image>
+    <text class='member-text'>تەكشە باسقارۋشى</text>
+  </view>
+</view>
+<view class='content-two content-body'>
+  <!-- 退出登录 -->
+  <view wx:if="{{hasLogin}}" class='content-view' bindtap='logout'>
+    <image class='member-icon' src='../../images/out.png'></image>
+    <text class='member-text'>شەگىنۋ</text>
+  </view>
+</view>
+            <view class="adContainer">
+            <ad unit-id="adunit-636bea02c23dbdd1"></ad>
+        </view>
+<van-toast id="van-toast" class="mytoast"/>
+<van-dialog id="van-dialog" class="mytoast"/>
+
+<van-tabbar class="mybar" active="{{ active }}" bind:change="onFootTabChange">
+  <van-tabbar-item name="home" icon="home-o">ەسىمدەر</van-tabbar-item>
+  <van-tabbar-item name="mine" icon="contact">مەنىڭ</van-tabbar-item>
+  <van-tabbar-item name="news" icon="bulb-o">مازمۇن</van-tabbar-item>
+</van-tabbar>

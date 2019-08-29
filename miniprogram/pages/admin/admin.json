@@ -1,0 +1,29 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fd5353",
+  "navigationBarTitleText": "admin",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "van-field": "vant-weapp/field",
+    "van-button": "vant-weapp/button",
+    "van-switch-cell": "vant-weapp/switch-cell",
+    "van-tab": "vant-weapp/tab",
+    "van-tabs": "vant-weapp/tabs",
+    "van-toast": "vant-weapp/toast",
+    "van-loading": "vant-weapp/loading",
+    "van-search": "vant-weapp/search",
+    "van-cell": "vant-weapp/cell",
+    "van-cell-group": "vant-weapp/cell-group",
+    "van-collapse": "vant-weapp/collapse",
+    "van-collapse-item": "vant-weapp/collapse-item",
+    "van-icon": "vant-weapp/icon",
+    "van-rate": "vant-weapp/rate",
+    "van-tabbar": "vant-weapp/tabbar",
+    "van-tabbar-item": "vant-weapp/tabbar-item",
+    "van-dialog": "vant-weapp/dialog",
+    "van-radio": "vant-weapp/radio",
+    "van-radio-group": "vant-weapp/radio-group",
+    "wux-card": "wux-weapp/card",
+    "wux-wing-blank": "wux-weapp/wing-blank"
+  }
+}

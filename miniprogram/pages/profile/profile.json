@@ -1,0 +1,14 @@
+{
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fd5353",
+        "navigationBarTitleText": "Men",
+        "navigationBarTextStyle": "white",
+        "navigationStyle": "custom",
+        "usingComponents": {
+        "van-tabbar": "vant-weapp/tabbar",
+        "van-tabbar-item": "vant-weapp/tabbar-item",
+        "van-toast": "vant-weapp/toast",
+        "van-dialog": "vant-weapp/dialog",
+        "van-nav-bar": "vant-weapp/nav-bar"
+  }
+}

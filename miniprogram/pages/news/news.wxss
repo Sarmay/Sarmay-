@@ -1,0 +1,37 @@
+.mybar {
+  font-family: kaz;
+}
+
+.mynatives {
+  font-family: kaz;
+}
+
+.mytoast {
+  font-family: kaz;
+  direction: rtl;
+}
+
+.mymedia .wux-media__title{
+  font-family: kaz;
+  direction: rtl;
+  line-height: 60rpx;
+}
+
+.mymedia image {
+  height: 100rpx;
+}
+
+swiper-item image {
+  width: 100%;
+}
+
+.adContainer {
+  width: 100%;
+  margin: 10rpx 0rpx;
+}
+
+.adContainerend {
+  width: 100%;
+  margin-top: 10rpx;
+  margin-bottom: 150rpx;
+}

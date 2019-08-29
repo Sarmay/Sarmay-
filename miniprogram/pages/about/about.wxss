@@ -1,0 +1,49 @@
+
+.logo {
+  padding: 30rpx 0rpx;
+  display:flex;         
+ justify-content: center;        
+}
+
+.mynatives {
+  font-family: kaz;
+}
+
+.head-sculpture {
+  height: 100rpx;
+  width: 300rpx;
+  float: center;
+}
+.about {
+  font-family: kaz;
+  direction: rtl;
+  background-color: #fff;
+  text-align: justify;
+  margin: 0rpx 10rpx 40rpx 10rpx;
+}
+
+.import {
+  color: #194158;
+}
+
+.do {
+  color:blue;
+}
+
+.job {
+  color: red;
+}
+
+.about text {
+  display: inline-block;
+  line-height: 50rpx;
+}
+
+.qr {
+  display:flex;         
+ justify-content: center;  
+}
+.qr image {
+ width: 500rpx;  
+ height: 450rpx;
+}

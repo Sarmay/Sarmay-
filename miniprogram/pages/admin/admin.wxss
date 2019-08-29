@@ -1,0 +1,73 @@
+.page {
+  direction: rtl;
+  font-family: kaz;
+}
+.showcomment {
+    direction: rtl;
+  font-family: kaz;
+}
+
+.actionss {
+  font-family: kaz;
+}
+/* pages/athoyw/athoyw.wxss */
+page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mytoast {
+  font-family: kaz;
+  direction: rtl;
+}
+
+.result-item {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx 0 20rpx 110rpx;
+  overflow: hidden;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.title {
+  height: 110rpx;
+}
+.loading {
+  position: relative;
+  bottom: 5rpx;
+  padding-top: 50rpx;
+  padding-bottom: 300rpx;
+  text-align: center;
+  direction: rtl;
+  font-family: kaz;
+  color: #1989fa;
+}
+
+.mean {
+margin: 40rpx 0rpx;
+}
+
+
+.lookbutton {
+  direction: rtl;
+  font-family: kaz;
+  margin: 10rpx;
+}
+
+.name-search {
+  direction: rtl;
+  font-family: kaz;
+}
+
+.input-class {
+  direction: rtl;
+  font-family: kaz;
+}
+
+.mybar {
+  font-family: kaz;
+}
+
+.sexname {
+  padding: 100rpx;
+}

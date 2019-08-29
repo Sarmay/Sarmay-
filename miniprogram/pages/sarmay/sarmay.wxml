@@ -1,0 +1,8 @@
+<van-nav-bar custom-class="mynatives" title="ەڭ جاڭا تەحىنيكالار" left-text="ارتقا قايتۋ" left-arrow bind:click-left="onClickLeft" fixed>
+</van-nav-bar>
+<van-nav-bar z-index="-1">
+</van-nav-bar>
+<view wx:if="{{show}}" class="kaz"><web-view class="kaz" src="{{url}}"></web-view></view>
+<view wx:if="{{loading}}" class="loading">اشىلۋدا،جارنامانى كورىپ ءسال توساتۇرىڭىز</view>
+<view wx:if="{{!loading}}" class="loading">جارنامانى تولىق كورىپ بولماساڭىز مازمۇننىڭ تولىعى اشىلمايدى</view>
+<button wx:if="{{!loading}}" class="button" bindtap="loadad">قايتالاي كورۋ</button>

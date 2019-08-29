@@ -1,0 +1,32 @@
+page {
+  font-family: kaz;
+}
+
+.mynatives {
+  font-family: kaz;
+}
+
+.kaz {
+  font-family: kaz;
+  direction: rtl;
+}
+ .loading {
+  position: relative;
+  bottom: 5rpx;
+  padding-top: 50rpx;
+  padding-bottom: 300rpx;
+  text-align: center;
+  direction: rtl;
+  font-family: kaz;
+  color: #1989fa;
+ }
+
+ .button {
+   position: relative;
+  bottom: 5rpx;
+  text-align: center;
+  direction: rtl;
+  font-family: kaz;
+  color: #fff;
+  background-color: #f00000;
+ }

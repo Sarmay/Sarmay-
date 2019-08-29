@@ -1,0 +1,73 @@
+<van-nav-bar class="hayam" custom-class="mynatives" title="قولداۋ كورسەتۋ" left-text="ارتقا قايتۋ" left-arrow bind:click-left="onClickLeft" fixed>
+</van-nav-bar>
+<van-nav-bar z-index="-1">
+</van-nav-bar>
+<view class="page">
+  <!-- 顶部信息 -->
+  <van-toast id="van-toast" class="mytoast" />
+  <van-dialog id="van-dialog" class="mytoast" />
+  <van-notify id="custom-selector" class="mynotify" />
+
+  <view class='member-content'>
+    <view class='content-header'>
+      <view class='header-top'>
+        <!-- 头像昵称 -->
+        <view class='top-mid'>
+          <block>
+            <image mode='aspectFill' class='head-sculpture' src='{{avatar}}'></image>
+            <text class='username'>{{nickname}}</text>
+          </block>
+        </view>
+
+      </view>
+      <image class='bg' src='../../images/zan_bg.png'></image>
+    </view>
+  </view>
+
+  <view class="word">قازاق تەحىنيكاسىنىڭ دامۋى ءۇشىن سىزدەرگە قىزىمەت وتەپ جاتقان سارماي تەحىنيكاسىن قولداپ قۋاتتاپ قويىڭىز</view>
+  <van-row gutter="20" class="grup">
+    <van-col span="8">
+      <van-button custom-class="button" bindtap="givegood" data-mony="0.5" plain icon="gold-coin-o" type="danger">0.5元</van-button>
+    </van-col>
+    <van-col span="8">
+      <van-button custom-class="button" bindtap="givegood" data-mony="1" plain icon="gold-coin-o" type="danger">1.0元</van-button>
+    </van-col>
+    <van-col span="8">
+      <van-button custom-class="button" bindtap="givegood" data-mony="2" plain icon="gold-coin-o" type="danger">2.0元</van-button>
+    </van-col>
+  </van-row>
+  <van-row gutter="20" class="grup">
+    <van-col span="8">
+      <van-button custom-class="button" bindtap="givegood" data-mony="5" plain icon="gold-coin-o" type="danger">5.0元</van-button>
+    </van-col>
+    <van-col span="8">
+      <van-button custom-class="button" bindtap="givegood" data-mony="10" plain icon="gold-coin-o" type="danger">10元</van-button>
+    </van-col>
+    <van-col span="8">
+      <van-button custom-class="button" bindtap="givegood" data-mony="20" plain icon="gold-coin-o" type="danger">20元</van-button>
+    </van-col>
+  </van-row>
+  <van-row gutter="20" class="grup">
+    <van-col span="8">
+      <van-button custom-class="button" bindtap="givegood" data-mony="30" plain icon="gold-coin-o" type="danger">30元</van-button>
+    </van-col>
+    <van-col span="8">
+      <van-button custom-class="button" bindtap="givegood" data-mony="50" plain icon="gold-coin-o" type="danger">50元</van-button>
+    </van-col>
+    <van-col span="8">
+      <van-button custom-class="button" bindtap="givegood" data-mony="100" plain icon="gold-coin-o" type="danger">100元</van-button>
+    </van-col>
+  </van-row>
+  <view class="giveme">
+    <text>قولداعان اسىل جاندار</text>
+  </view>
+  <view wx:for="{{goodmanList}}" wx:key="{{index}}">
+    <van-row class="goodmans">
+      <van-col offset="1" span="5">
+        <image src="{{item.image}}"></image>
+      </van-col>
+      <van-col span="10">{{item.name}}</van-col>
+      <van-col custom-class="mymony" offset="4" span="4">{{item.money}} 元</van-col>
+    </van-row>
+  </view>
+</view>

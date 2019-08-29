@@ -1,0 +1,26 @@
+<van-nav-bar title-class="natbar" custom-class="natbar" title="تەكشەگە تىركەلۋ" left-text="ارتقا قايتۋ" left-arrow  bind:click-left="onClickLeft" fixed>
+</van-nav-bar>
+<van-nav-bar z-index="-1">
+</van-nav-bar>
+<!-- 登录注册第一个页面 -->
+<view class="content">
+		<view class="login-m">
+			<view class="login-item">
+				<view class="logo">
+					<open-data type="userAvatarUrl"></open-data>
+				</view>
+			</view>
+			<view class="login-tip">
+				<view class="login-tip-big">
+					ميكىرو دەتالىمىز تومەندەگىدەي ۇقىقتاردى قاجەت ەتەدى
+				</view>
+				<view class="login-tip-small">
+					ءۇنحات ەسىمىڭىز جانە ءۇنحات باس سۋرەتىڭىز
+				</view>
+			</view>
+		</view>
+		<view class="login-b flc">
+    <button class="auth-btn " open-type="getUserInfo" bindgetuserinfo="getUserInfo" hover-class="btn-hover">جارايدى</button>
+			<button class="auth-btn refuse" bindtap="handleRefuse">شەگىنۋ</button>
+		</view>
+	</view>

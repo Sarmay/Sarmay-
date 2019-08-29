@@ -1,0 +1,52 @@
+<van-nav-bar title-class="natbar" custom-class="natbar" title="ات قويۋ سەستاماسى" fixed>
+</van-nav-bar>
+<van-nav-bar z-index="-1">
+</van-nav-bar>
+<van-search shape="round" input-class="input-class" custom-class="name-search" placeholder-style="direction: rtl;font-family: kaz;" value="{{ searchName }}" input-align="right" placeholder="ەسىمىڭىزدى كىرگىزىڭىز" use-action-slot bind:change="onMySearch" bind:search="onMySearch"
+>
+<view slot="action" bindtap="onTheSearch">ىزدەۋ</view>
+</van-search>
+
+
+<scroll-view hidden="{{searchList.length == 0}}" wx:if="{{isSearch}}" scroll-y="true" bindscrolltolower="searchScrollLower">
+<van-collapse value="{{ activeName }}" bind:change="onNameChange" accordion>
+  <van-collapse-item class="yourname" name="{{index}}" wx:for="{{searchList}}" wx:key="item">
+    <view slot="title">{{item.name}}</view>
+    <view slot="value" wx:if="{{item.sex == 'Male'}}">ەر</view>
+    <view slot="value" wx:else>ايەل</view>
+       <view class="mean">{{item.mean}}</view>
+      <van-button class="lookbutton" bindtap="getMean" data-nameid="{{item._id}}" icon="browsing-history-o" size="small" type="primary">تولىعىن كورۋ</van-button>
+  </van-collapse-item>
+</van-collapse>
+  <view class="loading" wx:if="{{loadSearchMore}}">
+  <van-loading type="spinner" color="#1989fa" />
+  كوپتەگەن ەسىمدەر اشىلۋدا...</view>
+<view wx:elif="{{loadSearchAll}}" class="loading">بارلىق ەسىمدەر اشىلىپ بولدى</view>
+</scroll-view>
+<view wx:if="{{nofound}}" class="loading">ىزدەگەن ەسىمىڭىز تابىلمادى</view>
+
+
+
+<van-toast id="van-toast" class="mytoast"/>
+
+<scroll-view wx:if="{{!isSearch}}" scroll-y="true" bindscrolltolower="searchScrollLower">
+<van-collapse value="{{ activeName }}" bind:change="onNameChange" accordion>
+  <van-collapse-item class="yourname" name="{{index}}" wx:for="{{dataList}}" wx:key="item">
+    <view slot="title">{{item.name}}</view>
+    <view slot="value" wx:if="{{item.sex == 'Male'}}">ەر</view>
+    <view slot="value" wx:else>ايەل</view>
+    <view class="mean">{{item.mean}}</view>
+      <van-button class="lookbutton" bindtap="getMean" data-nameid="{{item._id}}" icon="browsing-history-o" size="small" type="primary">تولىعىن كورۋ</van-button>
+  </van-collapse-item>
+</van-collapse>
+  <view class="loading" hidden="{{!loadMore}}">
+  <van-loading type="spinner" color="#1989fa" />
+  كوپتەگەن ەسىمدەر اشىلۋدا...</view>
+  <view class="loading" hidden="{{!loadAll}}">بارلىق ەسىمدەر اشىلىپ بولدى</view>
+</scroll-view>
+
+<van-tabbar class="mybar" active="{{ active }}" bind:change="onFootTabChange">
+  <van-tabbar-item name="home" icon="home-o">ەسىمدەر</van-tabbar-item>
+  <van-tabbar-item name="mine" icon="contact">مەنىڭ</van-tabbar-item>
+  <van-tabbar-item name="news" icon="bulb-o">مازمۇن</van-tabbar-item>
+</van-tabbar>

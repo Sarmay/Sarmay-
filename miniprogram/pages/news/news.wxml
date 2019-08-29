@@ -1,0 +1,31 @@
+<van-nav-bar custom-class="mynatives" title="ەڭ جاڭا تەحىنيكالار" fixed>
+</van-nav-bar>
+<van-nav-bar z-index="-1">
+</van-nav-bar>
+
+<swiper autoplay="true" indicator-dots="true" indicator-color="red" indicator-active-color="blue" circular="true" interval="3000">
+  <swiper-item wx:for="{{bannerdata}}" wx:key="{{index}}"><image bindtap="clickmedia" data-newsurl="{{item.url}}" mode="widthFix" src="{{item.image}}"></image></swiper-item>
+</swiper>
+
+<official-account></official-account>
+
+        <view class="adContainer">
+            <ad unit-id="adunit-ba64b9396b3abeb0"></ad>
+        </view>
+
+<view class="mymedia" wx:for="{{newsdata}}" wx:key="{{index}}" bindtap="clickmedia">
+   <wux-media thumb="{{item.image}}" thumb-style="border-radius: 50%;" data-newsurl="{{item.url}}" title="{{item.title}}" label="{{item.decs}}"></wux-media>
+</view>
+
+        <view class="adContainerend">
+            <ad unit-id="adunit-ba64b9396b3abeb0"></ad>
+        </view>
+
+<van-toast id="van-toast" class="mytoast"/>
+<van-dialog id="van-dialog" class="mytoast"/>
+
+<van-tabbar class="mybar" active="{{ active }}" bind:change="onFootTabChange">
+  <van-tabbar-item name="home" icon="home-o">ەسىمدەر</van-tabbar-item>
+  <van-tabbar-item name="mine" icon="contact">مەنىڭ</van-tabbar-item>
+  <van-tabbar-item name="news" icon="bulb-o">مازمۇن</van-tabbar-item>
+</van-tabbar>

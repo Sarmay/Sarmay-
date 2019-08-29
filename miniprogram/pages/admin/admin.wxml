@@ -1,0 +1,202 @@
+<van-tabs sticky="true" animated="true" active="{{ active }}" bind:change="onTabChange">
+  <van-tab title="添加广告">
+  <van-cell-group>
+  <van-field
+    value="{{ questurl }}"
+    center
+    clearable
+    placeholder="请输入文章地址"
+    border="{{ false }}"
+    bind:change="onGetUrChange"
+    use-button-slot
+  >
+    <van-button bind:click="onGetBtnChange" slot="button" size="small" icon="search" type="primary">获取信息</van-button>
+  </van-field>
+</van-cell-group>
+    <view style="margin: 20rpx 0rpx;"></view>
+    <van-cell-group>
+  <van-field
+    value="{{ title }}"
+    clearable
+    label="标题"
+    left-icon="notes-o"
+    placeholder="请输入标题"
+    bind:change="onTitleChange"
+  />
+
+    <van-field
+    value="{{ decs }}"
+    clearable
+    label="介绍"
+    left-icon="records"
+    placeholder="请输入介绍"
+    bind:change="onDecsChange"
+  />
+
+    <van-field
+    value="{{ image }}"
+    clearable
+    label="图片"
+    left-icon="photo-o"
+    placeholder="请输入图片地址"
+    bind:change="onImageChange"
+  />
+
+    <van-field
+    value="{{ url }}"
+    clearable
+    label="文章"
+    left-icon="description"
+    placeholder="请输入阅读地址"
+    bind:change="onUrlChange"
+  />
+
+  <view style="margin: 20rpx 0rpx;"></view>
+<van-switch-cell
+  title="{{isbanner}}"
+  checked="{{ ischeck }}"
+  icon="other-pay"
+  bind:change="onIscheckChange"
+/>
+<view style="margin: 20rpx 0rpx;"></view>
+
+</van-cell-group>
+
+<van-button size="large" type="info" bind:click="add" icon="plus">添加</van-button>
+  
+  </van-tab>
+  <van-tab title="添加名字">
+  
+          <van-cell-group>
+            <van-field
+              value="{{ name }}"
+              label="名字"
+              clearable
+              left-icon="contact"
+              placeholder="请输入名字"
+              bind:change="onNameChange"
+            />
+          </van-cell-group>
+
+
+          <view style="margin: 20rpx 0rpx;"></view>
+          <van-switch-cell
+            title="{{sex}}"
+            checked="{{ checked }}"
+            bind:change="onChange"
+            icon="circle"
+          />
+          <view style="margin: 20rpx 0rpx;"></view>
+
+
+          <van-cell-group>
+            <van-field
+              value="{{ mean }}"
+              label="含义"
+              clearable
+              left-icon="description"
+              type="textarea"
+              placeholder="请输入含义"
+              autosize="true"
+              bind:change="onMeanChange"
+            />
+          </van-cell-group>
+          <view style="margin: 20rpx 0rpx;"></view>
+          <van-button size="large" type="primary" bind:click="sub" icon="plus">添加</van-button>
+  </van-tab>
+  <van-tab title="修改名字">
+              <van-search shape="round" input-class="input-class" custom-class="name-search" placeholder-style="direction: rtl;font-family: kaz;" value="{{ searchName }}" input-align="right" placeholder="ەسىمىڭىزدى كىرگىزىڭىز" use-action-slot bind:change="onMySearch" bind:search="onMySearch"
+            >
+            <view slot="action" bindtap="onTheSearch">ىزدەۋ</view>
+            </van-search>
+
+    <scroll-view hidden="{{searchList.length == 0}}" wx:if="{{isSearch}}" scroll-y="true" bindscrolltolower="searchScrollLower">
+    <van-collapse value="{{ activeName }}" bind:change="onnameChange" accordion>
+      <van-collapse-item class="yourname" name="{{index}}" wx:for="{{searchList}}" wx:key="{{index}}">
+        <view slot="title">{{item.name}}</view>
+        <view slot="value" wx:if="{{item.sex == 'Male'}}">ەر</view>
+        <view slot="value" wx:else>ايەل</view>
+          <view class="mean">{{item.mean}}</view>
+          <van-button class="lookbutton" bindtap="edit" data-nameid="{{item._id}}" icon="edit" size="small" type="primary">وزگەرتۋ</van-button>
+               <van-button class="lookbutton" bindtap="delet" data-nameid="{{item._id}}" icon="delete" size="small" type="danger">ءوشىرۋ</van-button>
+      </van-collapse-item>
+    </van-collapse>
+      <view class="loading" wx:if="{{loadSearchMore}}">
+      <van-loading type="spinner" color="#1989fa" />
+      كوپتەگەن ەسىمدەر اشىلۋدا...</view>
+    <view wx:elif="{{loadSearchAll}}" class="loading">بارلىق ەسىمدەر اشىلىپ بولدى</view>
+    </scroll-view>
+    <view wx:if="{{nofound}}" class="loading">ىزدەگەن ەسىمىڭىز تابىلمادى</view>
+
+
+  </van-tab>
+  <!-- 第四部分 -->
+  <van-tab title="删除评论">
+      <view>
+        <view wx:for="{{comment}}" wx:key="{{index}}">
+              <wux-card wux-class="actionss" full title="{{item.username}}" actions="{{ actions }}" data-gid='{{item._id}}' bind:action="onAction"  thumb="{{item.userimg}}" thumb-style="border-radius: 50%;">
+                  <view slot="body" class="showcomment">{{item.content}}</view>
+                  <view slot="footer">{{item.creatTime}}</view>
+              </wux-card>
+        </view>
+        <view hidden="{{loadAll}}">
+           <van-button color="#7232dd" size="large" bind:click="getmoreDelet">显示更多</van-button>
+        </view>
+      </view>
+  </van-tab>
+</van-tabs>
+<!-- 弹框部分开始 -->
+<van-toast id="van-toast" class="mytoast"/>
+<van-dialog id="van-dialog" class="mytoast"/>
+<van-dialog
+  use-slot
+  title="修改"
+  confirmButtonText="修改"
+  show="{{ show }}"
+  show-cancel-button
+  bind:close="onClose"
+ bind:confirm="onConfirm"
+>
+  <view>
+  <van-cell-group>
+  <van-field
+    value="{{ editNameValue }}"
+    label="名字"
+    placeholder="请输入名字"
+    border="{{ false }}"
+    bind:change="onEditNameChange"
+  />
+        <van-radio-group value="{{ radio }}" bind:change="onRadioChange">
+        <van-cell-group>
+          <van-cell
+            title="男"
+            value-class="value-class"
+            clickable
+            data-name="Male"
+            bind:click="onRadioClick"
+          >
+            <van-radio name="Male" />
+          </van-cell>
+          <van-cell
+            title="女"
+            value-class="value-class"
+            clickable
+            data-name="Famale"
+            bind:click="onRadioClick"
+          >
+            <van-radio name="Famale" />
+          </van-cell>
+        </van-cell-group>
+      </van-radio-group>
+    <van-field
+    value="{{ editNameMean }}"
+    label="含义"
+    type="textarea"
+    placeholder="请输入名字的含义"
+    autosize
+    border="{{ false }}"
+    bind:change="onEditMeanChange"
+  />
+</van-cell-group>
+  </view>
+</van-dialog>
