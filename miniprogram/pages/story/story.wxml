@@ -1,0 +1,25 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">قايتۋ</view>
+  <view slot="content">بولىمدەرى</view>
+</cu-custom>
+
+<ad unit-id="adunit-41fe8bc4a6ecd4c0"></ad>
+<view wx:for="{{moveList}}" wx:key="{{index}}">
+  <view class="bg-white kaz padding-xl radius shadow-warp bg-white margin-top" hover-class="hover_img" bindtap="publicUrl" data-lid="{{item._id}}" data-name="{{item.cname}}" data-img="{{item.cimg}}">
+      <view class="grid col-5 grid-square">
+        <view class="padding-sm margin-xs radius bg-img" style="background-image:url({{item.cimg}});">
+        </view>
+        <text class="text-s">
+           {{item.cname}}
+        </text>
+
+      </view>
+    </view>
+</view>
+
+<view class="padding-xl" wx:if="{{loadMore}}">
+  <button class="cu-btn block bg-black margin-tb-sm lg" loading>تاعى كوپتەگەن</button>
+</view>
+<view class="padding-xl" wx:if="{{loadAll}}">
+  <button class="cu-btn block bg-black margin-tb-sm lg" disabled> بارلىق مازمۇن اشىلىپ بولدى</button>
+</view>

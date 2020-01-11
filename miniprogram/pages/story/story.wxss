@@ -1,0 +1,10 @@
+ .hover_img {
+    background-color: rgba(133, 113, 113, 0.1);
+  }
+  
+  .text-s {
+    position: absolute;
+    top: 40%; 
+    left: 40%;
+    transform: translate(-50%, -50%);
+  }

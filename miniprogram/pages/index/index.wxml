@@ -1,0 +1,82 @@
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">ۇكىلى قىز</view>
+</cu-custom>
+
+<swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{swiperList}}" wx:key bindtap="videoid" data-vid="{{item.cid}}">
+    <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+    <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+  </swiper-item>
+</swiper>
+<!-- 标签 -->
+<view class="cu-bar bg-white margin-top kaz" style="margin-top: 0rpx;">
+  <view class="action">
+    <text class="cuIcon-title text-pink" style="margin-left: 20rpx;"></text> تەلە - فيلىمدەر
+  </view>
+  <view class="action admin" bindtap="admin" hover-class="hover_img">
+    <view class="cuIcon-my"></view>
+  </view>
+</view>
+
+<!-- 列表开始 -->
+<view class="bg-white">
+  <view class="grid col-3 margin-bottom text-center">
+    <view wx:for="{{moveList}}" wx:key="{{index}}">
+      <view class="padding-sm" hover-class="hover_img" bindtap="videoid" data-vid="{{item.cid}}">
+        <image class="tel-video" src="{{item.cimg}}"></image>
+        <view class="text-cut padding-xs radius kaz">{{item.cname}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="padding-sm" wx:if="{{!loadAll}}">
+    <button bindtap="loadMoreVideColumn" class="cu-btn block bg-black margin-tb-sm lg">تاعى كوپتەگەن</button>
+  </view>
+  <view class="padding-xl" wx:if="{{loadAll}}">
+    <button class="cu-btn block bg-black margin-tb-sm lg" disabled> بارلىق مازمۇن اشىلىپ بولدى</button>
+  </view>
+
+</view>
+
+<!-- 第二段展示开始 -->
+<view class="cu-bar bg-white margin-top kaz">
+  <view class="action">
+    <text class="cuIcon-title text-pink" style="margin-left: 20rpx;"></text> اڭگىمەلەر جيناعى
+  </view>
+</view>
+
+<!-- 列表开始 -->
+<view class="bg-white">
+  <view class="grid col-3 margin-bottom text-center">
+    <view wx:for="{{storyList}}" wx:key="{{index}}">
+      <view class="padding-sm" hover-class="hover_img" bindtap="storyid" data-vid="{{item.cid}}">
+        <image class="tel-video" src="{{item.cimg}}"></image>
+        <view class="text-cut padding-xs radius kaz">{{item.cname}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="padding-sm" wx:if="{{!loadStoryAll}}">
+    <button bindtap="loadMoreStoryColumn" class="cu-btn block bg-black margin-tb-sm lg">تاعى كوپتەگەن</button>
+  </view>
+  <view class="padding-xl" wx:if="{{loadStoryAll}}">
+    <button class="cu-btn block bg-black margin-tb-sm lg" disabled> بارلىق مازمۇن اشىلىپ بولدى</button>
+  </view>
+
+</view>
+
+<!-- 弹框 -->
+
+<view class="cu-modal {{modalName=='Modal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">ەسكەرتۋ</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl" style="font-size:35rpx;">
+      {{modalcontent}}
+    </view>
+  </view>
+</view>

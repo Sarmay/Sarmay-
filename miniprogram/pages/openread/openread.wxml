@@ -1,0 +1,14 @@
+<view wx:if="{{isOukai==3}}" class="showtitle">
+ەڭبەگىمىز ءۇشىن اشىلعان جارنامانى ءبىر باسىپ كەتىڭىز
+</view>
+<view wx:if="{{isOukai==2}}" class="showtitle">
+  جارناما تولىق قويىلىپ بولماي شەگىنسەڭىز مازمۇننىڭ تولىعىن كورەالمايسىز
+
+  <view class="quit">
+  <button bindtap="quit">جارنامانى قايتالاي كورۋ</button>
+  </view>
+  
+</view>
+<view wx:if="{{isOukai==1}}">
+<web-view src="{{url}}"></web-view>
+</view>

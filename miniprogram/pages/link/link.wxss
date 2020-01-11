@@ -1,0 +1,16 @@
+.showtitle {
+  font-size: 1.25rem;
+  text-align: justify;
+  direction: rtl;
+  padding: 10px;
+  margin: 20px auto;
+  line-height: 2rem; 
+}
+.quit {
+  margin: 30px auto;
+}
+.quit button{
+  color: #fff;
+  background: #167DC2;
+  border:1px solid #167DC2;
+}
