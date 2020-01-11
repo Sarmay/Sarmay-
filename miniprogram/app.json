@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/map/map",
+    "pages/profile/profile"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "最新热门电影",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#faaf00",
+    "list": [
+      {
+        "iconPath": "/images/01.png",
+        "selectedIconPath": "/images/01d.png",
+        "pagePath": "pages/index/index",
+        "text": "热门电影"
+      },
+      {
+        "iconPath": "/images/02.png",
+        "selectedIconPath": "/images/02d.png",
+        "pagePath": "pages/map/map",
+        "text": "影院位置"
+      },
+      {
+        "iconPath": "/images/03.png",
+        "selectedIconPath": "/images/03d.png",
+        "pagePath": "pages/profile/profile",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

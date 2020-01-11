@@ -1,0 +1,5 @@
+<!--pages/profile/profile.wxml-->
+<button open-type="getUserInfo" bindgetuserinfo="getUserInfo">获取用户信息</button>
+<view>昵称：{{userInfo.nickName}}</view>
+<image src="{{userInfo.avatarUrl}}"></image>
+<view>城市：{{userInfo.city}}-国家：{{userInfo.country}}-性别：{{userInfo.gender==1?'男':'女'}}-省份：{{userInfo.province}}-语言：{{userInfo.language}}</view>

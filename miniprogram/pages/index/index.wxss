@@ -1,0 +1,41 @@
+/* miniprogram/pages/index/index.wxss */
+.top {
+  width: 100%;
+  overflow: hidden;
+}
+.home {
+  width: 100%;
+  border-bottom: 2rpx solid rgba(0, 0, 0, .2);
+}
+
+.van-card__title {
+  font-size: 30rpx;
+}
+
+.van-card__desc {
+  margin-top: 10rpx;
+}
+
+.van-card__footer {
+  position: absolute;
+  top: 100rpx;
+  left: 228rpx;
+  text-align: left !important;
+}
+
+.van-card__footer .look-ditail {
+  position: absolute;
+  top: 40rpx;
+  left: 300rpx;
+}
+
+.van-card__footer .look-ditail button{
+  width: 100%;
+  min-height: 10rpx !important;
+  height: 60rpx !important;
+  font-size: 26rpx;
+  line-height: 30rpx;
+  font-weight: 300;
+  color: #fff;
+  background-color: rgba(255, 0, 0, .9);
+}

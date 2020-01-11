@@ -1,0 +1,4 @@
+<!--pages/map/map.wxml-->
+<map id="map" longitude="108.93425" latitude="34.23053" scale="20" style="width:100%;height:600rpx;" show-location="true" show-compass="true" skew="20"></map>
+
+<button bindtap="getLoc">获取当前位置</button>

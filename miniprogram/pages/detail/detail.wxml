@@ -1,0 +1,77 @@
+<wxs module="filter" src="./dateToFix.wxs"></wxs>
+<van-notify id="van-notify" /><!-- 消息提示 -->
+<view hidden="{{show}}">
+  <!--pages/detail/detail.wxml-->
+  <view class="detail-head">
+  <view class="my-bluer" style="background: url({{list.images.large}}) 0 / cover fixed"></view>
+    <van-image custom-class="img" width="7rem" height="10rem" fit="fill" radius="10rpx" src="{{list.images.large}}" />
+
+    <view class="detail-head-simple">
+      <view>{{list.title}}</view>
+      <view>{{list.original_title}}</view>
+      <view>
+        <text wx:for="{{list.genres}}" wx:key="index">{{item}}  </text>/
+        <text>{{list.countries}}</text>/
+        <text>{{list.durations}}</text>
+      </view>
+      <view style="margin-top:20rpx;font-size: 26rpx;color: rgba(0, 0, 0, 0.6);">{{list.pubdate?list.pubdate:'未上映'}}</view>
+      <view class="stars">
+        <text>评分：</text>
+        <van-rate readonly allow-half value="{{(list.rating.average)/2}}" />
+        <text style="margin-left:10rpx;">{{list.rating.average}}分</text>
+      </view>
+    </view>
+  </view>
+  <view class="detail-middle">
+    <view style="color:#ffaf33;">
+      {{list.title}}的剧情简介：
+    </view>
+    <view style="font-size: 26rpx;color: rgba(0, 0, 0, 0.6);margin-top:20rpx;text-indent:2em;">{{list.summary}}</view>
+  </view>
+
+  <view class="detail-art">
+    <view>
+      <block wx:for="{{list.casts}}" wx:key="index">
+        <view style="display: flex;flex-flow: column;">
+          <van-image width="5rem" height="7rem" fit="fill" src="{{item.avatars.large}}" radius="10rpx" />
+          <text>{{item.name}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class="my-popular">
+    <van-cell-group>
+      <view style="display: flex;justify-content: baseline;margin:30rpx;">
+        <text style="margin-top:5rpx;">我的评分：</text>
+        <van-rate allow-half value="{{ my_star }}" bind:change="onMyStarChange" /><text style="margin-left:10rpx;margin-top:5rpx;">{{ my_star }}分</text></view>
+      <van-field value="{{ my_rating }}" label="我的评价" type="textarea" placeholder="请输入您的评价..." autosize clearable border="{{ true }}"   bind:change="onMyRatingChange" />
+
+      <van-uploader file-list="{{ fileList }}" max-count="9" bind:after-read="afterRead" bind:delete="clickDeletPic" accept="image"   />
+      <van-button icon="edit" block="{{ true }}" disabled="{{ isDisbol }}" type="primary" bind:click="clickUp">发表评论</van-button>
+    </van-cell-group>
+
+  </view>
+
+  <view class="popular_reviews">
+    <view style="font-size: 36rpx;color: rgba(10, 10, 10, 0.7);margin:20rpx;">网友短评</view>
+    <view wx:for="{{list.popular_comments}}" wx:key="index">
+      <view class="popular_reviews_head">
+        <van-image round width="3rem" height="3rem" src="{{item.author.avatar}}" />
+        <view style="margin-left:20rpx;margin-top:7rpx;">
+          <view style="font-size: 26rpx;color: rgba(10, 10, 10, 0.7);margin-left:10rpx;">{{item.author.name}}</view>
+          <van-rate readonly value="{{item.rating.value}}" size="{{ 12 }}" /><text style="font-size:24rpx;margin-left:10rpx;color: rgba(0, 0, 0, 0.5);">{{filter.numberToFixed(item.created_at)}}</text>
+
+        </view>
+      </view>
+      <view style="margin:20rpx; text-align: justify;text-indent:3em;color: rgba(0, 0, 0, 0.6);">{{item.content}}</view>
+      <view style="margin:20rpx;color: rgba(0, 0, 0, 0.5);display: flex;justify-content: baseline;">
+      <van-icon name="good-job-o" size="38rpx" />
+      <text style="margin-left:10rpx;">{{item.useful_count}}</text>
+      </view>
+    </view>
+  </view>
+  <van-divider dashed contentPosition="center" customStyle="color: rgba(0, 0, 0, 0.4);border-color: rgba(0, 0, 0, 0.3);font-size: 24rpx;">内容来自豆瓣网</van-divider>
+
+
+</view>

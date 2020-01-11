@@ -1,0 +1,24 @@
+<!--miniprogram/pages/index/index.wxml-->
+<view class="top">
+<block wx:for="{{list}}" wx:key="index">
+  <view class="home">
+    <van-card tag="热门电影" desc="上映日期：{{item.mainland_pubdate?item.mainland_pubdate:'未上映'}}" title="{{item.title}}" thumb="{{ item.images.small }}" thumb-link="/pages/detail/detail?id={{item.id}}">
+      <view slot="footer">
+        <view>分类：
+          <text wx:for="{{item.genres}}" wx:key="index"> {{item}} </text>
+        </view>
+        <view style="overflow: hidden;">导演：
+          <text>{{item.directors[0].name}}</text>
+        </view>
+        <view>评分：
+          <text style="color:#faaf00;">{{item.rating.average?item.rating.average:'未评分'}}分</text>
+        </view>
+        <view class="look-ditail">
+          <button bindtap="jumpComment" data-id="{{item.id}}">查看详情</button>
+        </view>
+      </view>
+    </van-card>
+
+  </view>
+</block>
+</view>

@@ -1,0 +1,15 @@
+// 支持es4语法
+var filter = {
+  numberToFixed: function (value) {
+    var reg = getRegExp('/\:/g','img');
+
+    var timearr = value.split(" ");
+    var year = timearr[0].split("-");
+    return year[1] + "月" + year[2]+"日";
+  }
+}
+// 导出对外暴露的属性
+module.exports = {
+  numberToFixed: filter.numberToFixed
+}
+
