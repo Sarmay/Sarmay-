@@ -1,0 +1,61 @@
+<!--miniprogram/pages/index/index.wxml-->
+<view style="margin-bottom:{{navBarHeight+44}}px;">
+  <van-nav-bar custom-class="navebar" title-class="mytitle" title="جاڭا مالشى" fixed="{{true}}">
+  </van-nav-bar>
+</view>
+
+<van-search custom-class="search-inputs" shape="round" placeholder-style="font-family: kaz;" value="{{ searchName }}" input-align="right" placeholder="كىلىت ءسوزىڭىزدى كىرگىزىڭىز" use-action-slot bind:change="onMySearch" bind:search="onMySearch">
+  <view slot="action" bindtap="onTheSearch" style="color: #1989fa;">ىزدەۋ</view>
+</van-search>
+
+<view class="swiper-container">
+  <swiper autoplay="auto" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
+    <block wx:for="{{slider}}" wx:key="unique">
+      <swiper-item>
+        <image src="{{item.picUrl}}" class="img"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="dots">
+    <block wx:for="{{slider}}" wx:key="unique">
+      <view data-i='{{index}}' bindtap='swiperClick' class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+    </block>
+  </view>
+</view>
+
+<view class="article-cat ">
+  <van-tabbar active="{{ active }}" bind:change="onArticalCarClick" fixed="{{false}}" border="{{false}}">
+    <van-tabbar-item name="hoy" icon="icon iconfont icon-yang">ەشكى باعىمشىلىعى</van-tabbar-item>
+    <van-tabbar-item name="syer" icon="icon iconfont icon-niu">سيىر باعىمشىلىعى</van-tabbar-item>
+    <van-tabbar-item name="tuye" icon="icon iconfont icon-luotuo">تۇيە باعىمشىلىعى</van-tabbar-item>
+    <van-tabbar-item name="jelhe" icon="icon iconfont icon-ma">جىلقى باعىمشىلىعى</van-tabbar-item>
+  </van-tabbar>
+  <van-tabbar active="{{ active }}" bind:change="onArticalCarClick" fixed="{{false}}" border="{{false}}">
+    <van-tabbar-item name="xop" icon="icon iconfont icon-siliao">جەم - ءشوپ</van-tabbar-item>
+    <van-tabbar-item name="mal" icon="icon iconfont icon-cheng">ساتۋ _ ساۋدالاۋ جولى</van-tabbar-item>
+    <van-tabbar-item name="bazar" icon="chart-trending-o">بازار بەتالىسى</van-tabbar-item>
+    <van-tabbar-item name="aldenalu" icon="icon iconfont icon-mianyang">قوي باعىمشىلىعى</van-tabbar-item>
+  </van-tabbar>
+</view>
+
+<van-divider contentPosition="center" dashed customStyle="color: #1989fa;border-color: #1989fa;">قىزعىندى مازمۇندار</van-divider>
+
+
+<view class="artical-model" wx:for="{{slider}}" wx:key="unique">
+  <view class="img">
+    <image src="/images/banner3.jpg" />
+  </view>
+  <view class="title-container">
+    <view class="big-title">
+    بۇل جەرگە مازمۇننىڭ باسقى تاقىرىبى جازىلادى،ەگەر ەرەكشە ۇزىن بولسا،وندا وسىلاي كورىنەدى
+    بۇل جەرگە مازمۇننىڭ باسقى تاقىرىبى جازىلادى،ەگەر ەرەكشە ۇزىن بولسا،وندا وسىلاي كورىنەدى
+    </view>
+    <view class="sub-title">
+    <text>مازمۇنىڭ شىققان ۋاقىتى :</text>
+    <text style="direction: ltr;">2020-01-19 18:30:30</text>
+    </view>
+  </view>
+</view>
+<van-divider contentPosition="center" dashed>مازمۇن اياقتالدى</van-divider>
+<view style="height:70px;"></view>
