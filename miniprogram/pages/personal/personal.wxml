@@ -1,0 +1,24 @@
+<!--pages/personal/personal.wxml-->
+<view style="margin-bottom:{{navBarHeight+44}}px;">
+  <van-nav-bar custom-class="navebar" title-class="mytitle" title="مەنىڭ" fixed="{{true}}">
+  </van-nav-bar>
+</view>
+<!-- 个人设置 -->
+<view class="header-container">
+  <image class='header-bg' src='../../images/pr-bg.jpeg'></image>
+  <view class='userContent'>
+    <view>
+    <text class="header-nickname">اتى - ءجونى</text>
+    </view>
+    <view class="header-avatar">
+      <van-image width="80" height="80" lazy-load round src="https://img.yzcdn.cn/vant/cat.jpeg" />
+    </view>
+  </view>
+</view>
+
+<view class="personal-btn">
+<van-cell-group title="حابارلاسىڭىز">
+  <van-cell title="بىزگە قاتىستى" is-link arrow-direction="left" link-type="navigateTo" url="/pages/index/index" />
+    <van-cell title="حابارلاسىڭىز" is-link arrow-direction="left" link-type="navigateTo" url="/pages/index/index" />
+</van-cell-group>
+</view>

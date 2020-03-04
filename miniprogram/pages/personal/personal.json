@@ -1,0 +1,14 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-nav-bar": "@vant/weapp/nav-bar",
+    "van-button": "@vant/weapp/button",
+    "van-image": "@vant/weapp/image",
+    "van-cell": "@vant/weapp/cell",
+    "van-cell-group": "@vant/weapp/cell-group",
+    "van-tabbar": "@vant/weapp/tabbar",
+    "van-tabbar-item": "@vant/weapp/tabbar-item",
+    "van-divider": "@vant/weapp/divider",
+    "van-icon": "@vant/weapp/icon"
+  }
+}

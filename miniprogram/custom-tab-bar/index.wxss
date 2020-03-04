@@ -1,4 +1,1 @@
 /* miniprogram/pages/custom-tab-bar/index.wxss */
-.van-tabbar-item__text {
-  font-family: kaz;
-}

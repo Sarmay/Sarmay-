@@ -42,7 +42,7 @@
 <van-divider contentPosition="center" dashed customStyle="color: #1989fa;border-color: #1989fa;">قىزعىندى مازمۇندار</van-divider>
 
 
-<view class="artical-model" wx:for="{{slider}}" wx:key="unique">
+<view class="artical-model" wx:for="{{slider}}" wx:key="unique" bindtap="hotArticalClick" data-id="{{index}}">
   <view class="img">
     <image src="/images/banner3.jpg" />
   </view>
@@ -58,4 +58,4 @@
   </view>
 </view>
 <van-divider contentPosition="center" dashed>مازمۇن اياقتالدى</van-divider>
-<view style="height:70px;"></view>
+<view style="height:{{safeBottom+60}}px"></view>

@@ -1,6 +1,17 @@
 // miniprogram/pages/index/index.js
 const app = getApp();
+
 Page({
+  // pageLifetimes: {
+  //   show() {
+  //     if (typeof this.getTabBar === 'function' &&
+  //       this.getTabBar()) {
+  //       this.getTabBar().setData({
+  //         active: 'index'
+  //       })
+  //     }
+  //   }
+  // },
 
   /**
    * 页面的初始数据
@@ -20,8 +31,8 @@ Page({
         picUrl: '/images/banner4.jpg'
       }
     ],
-
     navBarHeight: app.globalData.navHeight,
+    safeBottom: app.globalData.tabBarHeight,
     windowHeight: "",
     windowWidth: "",
     swiperCurrent: 0,
@@ -52,14 +63,25 @@ Page({
       icon: 'none'
     });
   },
+  hotArticalClick(event){
+    let id = event.currentTarget.dataset.id;
+    wx.showToast({
+      title: `${id}-文章`,
+      icon: 'none'
+    });
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()) {
+      this.getTabBar().setData({
+        active: 'index'
+      })
+    }
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -5,9 +5,10 @@
   inactive-color="#000"
   bind:change="onChange"
   fixed
+  style="font-family: kaz;"
 >
-  <van-tabbar-item name="men" icon="manager-o">مەنىڭ</van-tabbar-item>
-  <van-tabbar-item name="kenges" icon="smile-comment-o">كەڭەس سۇراۋ</van-tabbar-item>
-  <van-tabbar-item name="duken" icon="shop-o">دۇكەن</van-tabbar-item>
-  <van-tabbar-item name="basbet" icon="home-o">باس بەت</van-tabbar-item>
+  <van-tabbar-item name="personal" icon="manager-o">مەنىڭ</van-tabbar-item>
+  <van-tabbar-item name="questions" icon="smile-comment-o">كەڭەس سۇراۋ</van-tabbar-item>
+  <van-tabbar-item name="store" icon="shop-o">دۇكەن</van-tabbar-item>
+  <van-tabbar-item name="index" icon="home-o">باس بەت</van-tabbar-item>
 </van-tabbar>
